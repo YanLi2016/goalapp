@@ -12,13 +12,15 @@
 
 <p>
   <strong>Finish:</strong>
+  <% @mygoal.finish =  @mygoal.start + 100 %>
   <%= @mygoal.finish %>
 </p>
 
 <p>
-  <strong>Days:</strong>
+  <strong>Days Till Dream Come True:</strong>
+  <% @mygoal.days = @mygoal.finish - Date.today%>
   <%= @mygoal.days %>
 </p>
 
 <%= link_to 'Edit', edit_mygoal_path(@mygoal) %> |
-<%= link_to 'Back', mygoals_path %>
+<%= link_to 'View All', mygoals_path %>

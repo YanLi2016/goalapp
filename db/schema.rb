@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141204015952) do
+ActiveRecord::Schema.define(version: 20141204101521) do
 
   create_table "badgets", force: true do |t|
     t.string   "name"
@@ -27,6 +27,14 @@ ActiveRecord::Schema.define(version: 20141204015952) do
     t.datetime "updated_at"
   end
 
+  create_table "dailygoals", force: true do |t|
+    t.boolean  "done"
+    t.string   "description"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "mygoals", force: true do |t|
     t.string   "name"
     t.text     "description"
@@ -36,6 +44,16 @@ ActiveRecord::Schema.define(version: 20141204015952) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "tasks", force: true do |t|
+    t.string   "description"
+    t.boolean  "done"
+    t.integer  "mygoal_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "tasks", ["mygoal_id"], name: "index_tasks_on_mygoal_id"
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

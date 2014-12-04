@@ -1,0 +1,29 @@
+<h1>Listing dailygoals</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Done</th>
+      <th>Description</th>
+      <th>Comment</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dailygoals.each do |dailygoal| %>
+      <tr>
+        <td><%= dailygoal.done %></td>
+        <td><%= dailygoal.description %></td>
+        <td><%= dailygoal.comment %></td>
+        <td><%= link_to 'Show', dailygoal %></td>
+        <td><%= link_to 'Edit', edit_dailygoal_path(dailygoal) %></td>
+        <td><%= link_to 'Destroy', dailygoal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dailygoal', new_dailygoal_path %>

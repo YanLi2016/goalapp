@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :dailygoals
+
   resources :badgets
 
   resources :comments

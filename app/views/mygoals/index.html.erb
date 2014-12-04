@@ -1,13 +1,13 @@
 <h1>Listing mygoals</h1>
-
-<table>
+<div class="table-responsive">
+<table class="table">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Start</th>
-      <th>Finish</th>
-      <th>Days</th>
-      <th colspan="3"></th>
+      <th>name      </th>
+      <th>Start     </th>
+      <th>Finish    </th>
+      <th>Days      </th>
+      <th colspan="10"></th>
     </tr>
   </thead>
 
@@ -16,8 +16,8 @@
       <tr>
         <td><%= mygoal.name %></td>
         <td><%= mygoal.start %></td>
-        <td><%= mygoal.finish %></td>
-        <td><%= mygoal.days %></td>
+        <td><%= mygoal.start + 100 %></td>
+        <td><%= mygoal.start + 100 - Date.today %></td>
         <td><%= link_to 'Show', mygoal %></td>
         <td><%= link_to 'Edit', edit_mygoal_path(mygoal) %></td>
         <td><%= link_to 'Destroy', mygoal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -25,7 +25,7 @@
     <% end %>
   </tbody>
 </table>
-
+<div>
 <br>
 
 <%= link_to 'New Mygoal', new_mygoal_path %>
