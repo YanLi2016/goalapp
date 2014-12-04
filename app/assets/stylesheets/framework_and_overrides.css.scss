@@ -35,10 +35,11 @@ img {
 // to make views framework-neutral
 main {
   @extend .container;
-  background-color: #eee;
+  background-color: #98def9;
   padding-bottom: 80px;
   width: 100%;
   margin-top: 51px; // accommodate the navbar
+  color: #fff;
   }
 section {
   @extend .row;

@@ -1,16 +1,15 @@
-<h1>Listing mygoals</h1>
-<div class="table-responsive">
-<table class="table">
-  <thead>
-    <tr>
-      <th>name      </th>
-      <th>Start     </th>
-      <th>Finish    </th>
-      <th>Days      </th>
-      <th colspan="10"></th>
-    </tr>
-  </thead>
+<h1>My Goals</h1>
+<% @mygoals.each do |mygoal| %>
+  <h2>MY GOAL: <%= mygoal.name %></h2>
+  <h2>99 days to go</h2>
+  <div class="progress">
+    <div class="progress-bar" role="progressbar" aria-valuenow="1" aria-valuemin="0" aria-valuemax="100" style="width: 1%;">
+      <span class="sr-only">1% Complete</span>
+    </div>
+  </div>
+<% end %>
 
+<<<<<<< HEAD
   <tbody>
     <% @mygoals.each do |mygoal| %>
       <tr>
@@ -29,3 +28,6 @@
 <br>
 
 <%= link_to 'New Mygoal', new_mygoal_path %>
+=======
+<%= link_to 'NEW GOAL', new_mygoal_path %>
+>>>>>>> bf3cc5ca1200f3418dc518f3f04e006f4789a739
