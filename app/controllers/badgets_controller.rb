@@ -1,5 +1,5 @@
 class BadgetsController < ApplicationController
-  before_action :set_badget, only: [:show, :edit, :update, :destroy]
+  before_action :set_badget, only: [:show, :update, :destroy]
 
   respond_to :html
 
@@ -17,8 +17,6 @@ class BadgetsController < ApplicationController
     respond_with(@badget)
   end
 
-  def edit
-  end
 
   def create
     @badget = Badget.new(badget_params)

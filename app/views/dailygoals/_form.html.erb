@@ -2,9 +2,8 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :done %>
     <%= f.input :description %>
-    <%= f.input :comment %>
+    <%= f.association :mygoal %>
   </div>
 
   <div class="form-actions">
