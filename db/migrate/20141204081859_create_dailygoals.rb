@@ -4,6 +4,8 @@ class CreateDailygoals < ActiveRecord::Migration
       t.boolean :done
       t.string :description
       t.text :comment
+      t.integer :mygoal_id
+      t.date :date
 
       t.timestamps
     end

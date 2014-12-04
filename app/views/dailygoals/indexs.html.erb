@@ -1,5 +1,4 @@
 <h1>Listing dailygoals</h1>
-
 <table>
   <thead>
     <tr>
@@ -10,20 +9,23 @@
     </tr>
   </thead>
 
-  <tbody>
+   <tbody>
+    <% count = 0 %>
     <% @dailygoals.each do |dailygoal| %>
       <tr>
         <td><%= dailygoal.done %></td>
+        <% count = count +1 if dailygoal.done == true %>
         <td><%= dailygoal.description %></td>
-        <td><%= dailygoal.comment %></td>
-        <td><%= link_to 'Show', dailygoal %></td>
-        <td><%= link_to 'Edit', edit_dailygoal_path(dailygoal) %></td>
-        <td><%= link_to 'Destroy', dailygoal, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
-  </tbody>
+  </tbody> 
 </table>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" style="width: <%= count %>%;">
+    
+  </div>
+</div>
 
 <br>
 
-<%= link_to 'New Dailygoal', new_dailygoal_path %>
+<%= button_to 'New Dailygoal', new_dailygoal_path(),  :method => :get %>

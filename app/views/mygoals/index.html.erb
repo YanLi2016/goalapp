@@ -14,7 +14,7 @@
   <tbody>
     <% @mygoals.each do |mygoal| %>
       <tr>
-        <td><%= mygoal.name %></td>
+        <td><%= link_to mygoal.name, edits_dailygoal_path(:id => mygoal.id )  %></td>
         <td><%= mygoal.start %></td>
         <td><%= mygoal.start + 100 %></td>
         <td><%= mygoal.start + 100 - Date.today %></td>

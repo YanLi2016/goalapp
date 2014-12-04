@@ -31,6 +31,8 @@ ActiveRecord::Schema.define(version: 20141204101521) do
     t.boolean  "done"
     t.string   "description"
     t.text     "comment"
+    t.integer  "mygoal_id"
+    t.date     "date"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,8 +1,7 @@
 class Mygoal < ActiveRecord::Base
 	belongs_to :user
-
-	has_many :tasks
-	accepts_nested_attributes_for :tasks
+	has_many :dailygoals
+	
 
 	validates :name, presence: true, uniqueness: true 
 end

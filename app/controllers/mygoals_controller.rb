@@ -23,6 +23,14 @@ class MygoalsController < ApplicationController
   def create
     @mygoal = Mygoal.new(mygoal_params)
     flash[:notice] = 'Mygoal was successfully created.' if @mygoal.save
+    t = Date.today
+    for a in 0..100
+      dailygoal = Dailygoal.new
+      dailygoal.mygoal_id = @mygoal.id
+      dailygoal.date = t + a
+      dailygoal.done = false
+      dailygoal.save
+    end 
     respond_with(@mygoal)
   end
 
@@ -32,8 +40,10 @@ class MygoalsController < ApplicationController
   end
 
   def destroy
+    Dailygoal.destroy_all(:mygoal_id => @mygoal.id)
     @mygoal.destroy
     respond_with(@mygoal)
+
   end
 
   private

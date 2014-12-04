@@ -1,5 +1,4 @@
-<h1>New dailygoal</h1>
-
-<%= render 'form' %>
-
-<%= link_to 'Back', dailygoals_path %>
+<%= simple_form_for @dailygoal do |f| %>
+  D: <%= f.input :description %>
+  <%= button_to "submit", dailygoals_path(), :class => "button medium", :method => :post %>
+<% end %>

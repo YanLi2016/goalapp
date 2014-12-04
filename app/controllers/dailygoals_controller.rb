@@ -3,32 +3,42 @@ class DailygoalsController < ApplicationController
 
   respond_to :html
 
-  def index
-    @dailygoals = Dailygoal.all
+  def indexs
+    @dailygoals = Dailygoal.where(:mygoal_id => params[:id])
     respond_with(@dailygoals)
   end
 
   def show
+   
+    #@dailygoal= Dailygoal.where(:mygoal_id => params[:id], :date => Date.today).take
     respond_with(@dailygoal)
   end
 
   def new
-    @dailygoal = Dailygoal.new
+    @dailygoal = Dailygoal.new  
+    @dailygoal.mygoal_id =  :mygoal_id
     respond_with(@dailygoal)
   end
 
-  def edit
+
+  def edits
+    
+    @dailygoal= Dailygoal.where(:mygoal_id => params[:id], :date => Date.today).take
+    
   end
 
   def create
-    @dailygoal = Dailygoal.new(dailygoal_params)
+    @dailygoal = Dailygoal.find(params[:mygoal_id])
+    @dailygoal.description= params[:description]
     @dailygoal.save
     respond_with(@dailygoal)
   end
 
   def update
+    
     @dailygoal.update(dailygoal_params)
-    respond_with(@dailygoal)
+    #respond_with(@dailygoal)
+    redirect_to(root_path)
   end
 
   def destroy
