@@ -1,16 +1,9 @@
-<%= simple_form_for(@mygoal) do |f| %>
+<%= simple_form_for(@dailygoal) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
     <%= f.input :description %>
-
-    
-   
-
-
-    <%= f.input :start %>
-    
+    <%= f.association :mygoal %>
   </div>
 
   <div class="form-actions">
