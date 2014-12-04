@@ -1,0 +1,14 @@
+<%= simple_form_for(@mygoal) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :start %>
+    <%= f.input :finish %>
+    <%= f.input :days %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

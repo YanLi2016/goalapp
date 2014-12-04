@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @badget.name %>
+</p>
+
+<p>
+  <strong>Level:</strong>
+  <%= @badget.level %>
+</p>
+
+<%= link_to 'Edit', edit_badget_path(@badget) %> |
+<%= link_to 'Back', badgets_path %>
