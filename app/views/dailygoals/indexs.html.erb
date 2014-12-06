@@ -1,5 +1,5 @@
 <h1>Listing dailygoals</h1>
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Done</th>
@@ -12,11 +12,19 @@
    <tbody>
     <% count = 0 %>
     <% @dailygoals.each do |dailygoal| %>
-      <tr>
-        <td><%= dailygoal.done %></td>
-        <% count = count +1 if dailygoal.done == true %>
-        <td><%= dailygoal.description %></td>
-      </tr>
+     
+        <tr>
+          <% if dailygoal.done == true %>
+            <td>Yes!!!</td>
+          <% else %>
+            <td>No...</td>
+          <% end %>
+          <% count = count +1 if dailygoal.done == true %>
+          <% if dailygoal.description %>
+            <td><%= link_to dailygoal.description, edit_dailygoal_path(:id => dailygoal.id) %></td>
+          <% end %>
+        </tr>
+     
     <% end %>
   </tbody> 
 </table>
